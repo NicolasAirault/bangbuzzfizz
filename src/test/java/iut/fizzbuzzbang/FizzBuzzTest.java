@@ -41,4 +41,32 @@ public class FizzBuzzTest {
 		assertEquals("fizzbuzz", fizzBuzz.donnerLaReponsePour(30));
 		assertEquals("fizzbuzz", fizzBuzz.donnerLaReponsePour(45));
 	}
+	
+	@Test
+	public void doitRepondre_bang_PourUnNombreMultipleDe7() {
+		assertEquals("bang", fizzBuzz.donnerLaReponsePour(7));
+		assertEquals("bang", fizzBuzz.donnerLaReponsePour(14));
+		assertEquals("bang", fizzBuzz.donnerLaReponsePour(28));
+	}
+	
+	@Test
+	public void doitRepondre_fizzbang_PourUnNombreMultipleDe3EtMultipleDe7() {
+		assertEquals("fizzbang",fizzBuzz.donnerLaReponsePour(21));
+		assertEquals("fizzbang",fizzBuzz.donnerLaReponsePour(42));
+		assertEquals("fizzbang",fizzBuzz.donnerLaReponsePour(63));
+	}
+	
+	@Test
+	public void doitRepondre_buzzbang_PourUnNombreMultipleDe5EtMultipleDe7() {
+		assertEquals("buzzbang",fizzBuzz.donnerLaReponsePour(35));
+		assertEquals("buzzbang",fizzBuzz.donnerLaReponsePour(70));
+		assertEquals("buzzbang",fizzBuzz.donnerLaReponsePour(140));
+	}
+	
+	@Test
+	public void doitRepondre_fizzbuzzbang_PourUnNombreMultipleDe3EtMultipleDe5EtMultipleDe7() {
+		assertEquals("fizzbuzzbang", fizzBuzz.donnerLaReponsePour(105));
+		assertEquals("fizzbuzzbang", fizzBuzz.donnerLaReponsePour(210));
+		assertEquals("fizzbuzzbang", fizzBuzz.donnerLaReponsePour(315));
+	}
 }
