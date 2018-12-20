@@ -1,26 +1,30 @@
 package iut.fizzbuzzbang;
 
+import java.util.Arrays;
+import java.util.List;
+
+import iut.rules.Regle;
+import iut.rules.RegleBuzz;
+import iut.rules.RegleFizz;
+import iut.rules.RegleFizzBuzz;
+
 
 public class FizzBuzz {
+
+	List<Regle> regles = Arrays.asList(
+								new RegleFizzBuzz(),
+								new RegleFizz(),
+								new RegleBuzz());
 	
-	private FizzBuzzParts fizz;
-	private FizzBuzzParts buzz;
-	private String res;
 	
-	public String donnerLaReponsePour(int nombre) {
+	public String donnerLaReponsePour(Integer nombre) {
 		
-		fizz = new Fizz();
-		buzz = new Buzz();
-		res = "";
-		
-		if (fizz.isWhat(nombre)) {
-			res += fizz.mot();
+		for(Regle regle : regles) {
+			if(regle.estVerifieePar(nombre)) {
+				return regle.valeurAfficheeSiRegleVerifiee();
+			}
 		}
-		
-		if (buzz.isWhat(nombre)) {
-			res += buzz.mot();
-		}
-		
-		return res;
+
+		return String.valueOf(nombre);
 	}
-}
+} 
