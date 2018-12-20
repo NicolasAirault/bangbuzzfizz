@@ -7,9 +7,15 @@ import iut.rules.Regle;
 
 public class FizzBuzz {
 
-	List<Regle> regles = RulesFactory.build();
+	List<Regle> regles;
 
-
+	public FizzBuzz() {
+		this.regles = RulesFactory.build();
+	}
+	
+	public FizzBuzz(List<Regle> regles) {
+		this.regles = regles;
+	}
 
 	public String donnerLaReponsePour(Integer nombre) {
 
