@@ -16,9 +16,9 @@ public class FizzBuzzTest {
 
 	@Test
 	public void doitRepondre_LeNombre_PourUnCasSimple() {
-		assertEquals("1", fizzBuzz.donnerLaReponsePour(1));
-		assertEquals("2", fizzBuzz.donnerLaReponsePour(2));
-		assertEquals("4", fizzBuzz.donnerLaReponsePour(4));
+		assertEquals("", fizzBuzz.donnerLaReponsePour(1));
+		assertEquals("", fizzBuzz.donnerLaReponsePour(2));
+		assertEquals("", fizzBuzz.donnerLaReponsePour(4));
 	}
 
 	@Test

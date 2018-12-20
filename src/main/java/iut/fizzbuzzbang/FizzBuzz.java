@@ -2,31 +2,25 @@ package iut.fizzbuzzbang;
 
 
 public class FizzBuzz {
-
-	public String donnerLaReponsePour(Integer nombre) {
-
-		if (isFizzBuzz(nombre))
-			return "fizzbuzz";
-
-		if (isBuzz(nombre))
-			return "buzz";
-
-		if (isFizz(nombre))
-			return "fizz";
-
-		return String.valueOf(nombre);
+	
+	private FizzBuzzParts fizz;
+	private FizzBuzzParts buzz;
+	private String res;
+	
+	public String donnerLaReponsePour(int nombre) {
+		
+		fizz = new Fizz();
+		buzz = new Buzz();
+		res = "";
+		
+		if (fizz.isWhat(nombre)) {
+			res += fizz.mot();
+		}
+		
+		if (buzz.isWhat(nombre)) {
+			res += buzz.mot();
+		}
+		
+		return res;
 	}
-
-	private boolean isFizzBuzz(Integer nombre) {
-		return 0 == nombre % (3 * 5);
-	}
-
-	private boolean isBuzz(Integer nombre) {
-		return 0 == nombre % 5;
-	}
-
-	private boolean isFizz(Integer nombre) {
-		return 0 == nombre % 3;
-	}
-
 }
